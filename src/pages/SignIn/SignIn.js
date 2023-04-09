@@ -12,11 +12,13 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
+  CFormSelect,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
+import DocsExample from '../../components/DocsExample'
 
-const Login = () => {
+function SignIn() {
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -32,7 +34,7 @@ const Login = () => {
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
-                      <CFormInput placeholder="Username" autoComplete="username" />
+                      <CFormInput placeholder="Email" autoComplete="email" />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
@@ -43,6 +45,12 @@ const Login = () => {
                         placeholder="Password"
                         autoComplete="current-password"
                       />
+                    </CInputGroup>
+                    <CInputGroup className="mb-4">
+                      <CFormSelect aria-label="Default select example">
+                        <option value="1">Mentee</option>
+                        <option value="2">Mentor</option>
+                      </CFormSelect>
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
@@ -64,12 +72,16 @@ const Login = () => {
                   <div>
                     <h2>Sign up</h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.
+                      Register first to become Mentor or Mentee
                     </p>
                     <Link to="/register">
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Register Now!
+                        Register As Mentee!
+                      </CButton>
+                    </Link>
+                    <Link to="/register">
+                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
+                        Register As Mentor!
                       </CButton>
                     </Link>
                   </div>
@@ -83,4 +95,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default SignIn
