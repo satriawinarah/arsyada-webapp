@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
   CButton,
   CCard,
@@ -10,11 +10,13 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
+  CFormTextarea,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilUser, cilJustifyLeft, cilCalendar, cibLinkedinIn } from '@coreui/icons'
 
 function SignUpMentee() {
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -24,17 +26,42 @@ function SignUpMentee() {
               <CCardBody className="p-4">
                 <CForm>
                   <h1>Register</h1>
-                  <p className="text-medium-emphasis">Create your account</p>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>
-                      <CIcon icon={cilUser} />
-                    </CInputGroupText>
-                    <CFormInput placeholder="Username" autoComplete="username" />
-                  </CInputGroup>
+                  <p className="text-medium-emphasis">Create your Mentee account</p>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>@</CInputGroupText>
                     <CFormInput placeholder="Email" autoComplete="email" />
                   </CInputGroup>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilUser} />
+                    </CInputGroupText>
+                    <CFormInput placeholder="Name" />
+                  </CInputGroup>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilJustifyLeft} />
+                    </CInputGroupText>
+                    <CFormTextarea aria-label="Short Bio" placeholder='Short Bio'></CFormTextarea>
+                  </CInputGroup>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilCalendar} /> &nbsp; Date Birth
+                    </CInputGroupText>
+                    <CFormInput placeholder="Birth Date" type='date' />
+                  </CInputGroup>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cibLinkedinIn} />
+                    </CInputGroupText>
+                    <CFormInput placeholder="Linkedin URL" />
+                  </CInputGroup>
+                  <CInputGroup className="mb-3">
+                    <CFormInput type="file" id="inputGroupFile02" />
+                    <CInputGroupText component="label" htmlFor="inputGroupFile02">
+                      Profile Picture
+                    </CInputGroupText>
+                  </CInputGroup>
+                  <hr/>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilLockLocked} />
