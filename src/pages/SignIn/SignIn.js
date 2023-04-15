@@ -73,12 +73,12 @@ function SignIn() {
                     <p>
                       Register first to become Mentor or Mentee
                     </p>
-                    <Link to="/register">
+                    <Link to="/sign-up-mentee">
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
                         Register As Mentee!
                       </CButton>
                     </Link>
-                    <Link to="/register">
+                    <Link to="/sign-up-mentor">
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
                         Register As Mentor!
                       </CButton>
